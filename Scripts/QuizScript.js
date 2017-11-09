@@ -1,4 +1,5 @@
 
+// This array holds the question, their option and true answer
 var questions = [
 	["Which of the following can be operands of arithmetic operators?", "Numeric", "Boolean", "Characters", "Both Numeric & Characters", "D"],
 	["Decrement operator, –, decreases value of variable by what number?", "1", "2", "3", "4", "A"],
@@ -37,6 +38,7 @@ $(document).ready(function () {
 });
 
 
+// This function selects random question from the array
 function createRandomNumbers() {
 	while (quizQuestions.length < 10) {
 		var randomnumber = Math.ceil(Math.random() * 19);
@@ -48,6 +50,7 @@ function createRandomNumbers() {
 	}
 }
 
+// Building dynamic HTML with questions, options and submit answer button
 function renderQuestion() {
 	answer_container = $("#answer_container");
 
@@ -91,6 +94,7 @@ function renderQuestion() {
 	$("#container").effect("slide", "fast");
 }
 
+// This function checks whether the selected answer is true or not
 function checkAnswer() {
 	choices = $('[name =  "choices"]');
 	for (var i = 0; i < choices.length; i++) {
@@ -115,6 +119,7 @@ function checkAnswer() {
 	}
 }
 
+// When clicks retry button it starts the quiz again
 function retryQuiz(){
 		window.location.href = "Quiz.html";
 	}
